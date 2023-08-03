@@ -1,0 +1,15 @@
+#Header set Access-Control-Allow-Origin "*"
+#Header set Access-Control-Allow-Credentials: true
+#Header set Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS
+#Header set Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept
+
+#php_value memory_limit 512M
+#php_value upload_max_filesize 200M
+#php_value post_max_size 200M
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteRule ^$ index.php [L]
+RewriteCond $1 !^(index\.php|assets|static|test)
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

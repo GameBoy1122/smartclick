@@ -131,11 +131,11 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solution</a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Solution') ?>">Enterprise Application</a></li>
-                                <li><a href="<?php echo base_url('Solution') ?>">Data Center and Cloud </a></li>
-                                <li><a href="<?php echo base_url('Solution') ?>">Digital Marketing</a></li>
-                                <li><a href="<?php echo base_url('Solution') ?>">Streaming Solution</a></li>
-                                <li><a href="<?php echo base_url('Solution') ?>">IT Support</a></li>
+                                <li><a href="<?php echo base_url('Solution/enterprise') ?>">Enterprise Application</a></li>
+                                <li><a href="<?php echo base_url('Solution/datacenter') ?>">Data Center and Cloud</a></li>
+                                <li><a href="<?php echo base_url('Solution/digital') ?>">Digital Marketing</a></li>
+                                <li><a href="<?php echo base_url('Solution/streaming') ?>">Streaming Solution</a></li>
+                                <li><a href="<?php echo base_url('Solution/support') ?>">IT Support</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

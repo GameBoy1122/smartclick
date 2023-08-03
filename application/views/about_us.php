@@ -1,6 +1,6 @@
 <!-- Start Breadcrumb 
     ============================================= -->
-<div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(<?php echo base_url('assets/img/bg-about.jpeg') ?>);">
+<!-- <div class="breadcrumb-area shadow dark bg-fixed text-light">
     <div class="container">
         <div class="row align-center">
             <div class="col-lg-6">
@@ -15,12 +15,19 @@
             </div>
         </div>
     </div>
-</div>
-<!-- End Breadcrumb -->
+</div> -->
+
 
 <!-- Star About Area
     ============================================= -->
-<div class="about-area inc-shape default-padding">
+<div class="about-area inc-shape default-padding pt-0">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-5 about-us">
+                <h2><b>Company Profile</b></h2>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">

@@ -1,6 +1,6 @@
 <!-- Start Breadcrumb 
     ============================================= -->
-<div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(<?php echo base_url('assets/img/bg-about.jpeg') ?>);">
+<!-- <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(<?php echo base_url('assets/img/bg-about.jpeg') ?>);">
     <div class="container">
         <div class="row align-center">
             <div class="col-lg-6">
@@ -15,12 +15,19 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- End Breadcrumb -->
 
 <!-- Start Team 
     ============================================= -->
-<div class="team-single-area default-padding">
+<div class="team-single-area default-padding pt-0">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-5 about-us">
+                <h2><b>Message From CEO</b></h2>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="top-info">
             <div class="row align-center">

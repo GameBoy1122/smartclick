@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row align-center">
             <div class="col-lg-6">
-                <h2>Enterprise Application</h2>
+                <h2>Data Center and Cloud </h2>
             </div>
             <div class="col-lg-6 text-right">
                 <ul class="breadcrumb">
                     <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#">Solution</a></li>
-                    <li class="active">Enterprise Application</li>
+                    <li><a href="<?php echo base_url('Solution') ?>">Solution</a></li>
+                    <li class="active">Data Center and Cloud</li>
                 </ul>
             </div>
         </div>
@@ -60,8 +60,8 @@
             <div class="col-lg-4 sidebar">
                 <div class="sidebar-item link">
                     <ul>
-                        <li><a class="active" href="<?php echo base_url('Solution') ?>">Enterprise Application</a></li>
-                        <li><a href="<?php echo base_url('Solution') ?>">Data Center and Cloud </a></li>
+                        <li><a href="<?php echo base_url('Solution') ?>">Enterprise Application</a></li>
+                        <li><a class="active" href="<?php echo base_url('Solution') ?>">Data Center and Cloud </a></li>
                         <li><a href="<?php echo base_url('Solution') ?>">Digital Marketing</a></li>
                         <li><a href="<?php echo base_url('Solution') ?>">Streaming Solution</a></li>
                         <li><a href="<?php echo base_url('Solution') ?>">IT Support</a></li>

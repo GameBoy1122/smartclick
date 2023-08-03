@@ -1,10 +1,56 @@
+<style>
+    .carousel-item {
+        position: relative;
+        background-color: rgb(89 89 255 / 50%);
+        /* Replace with your desired background color and opacity */
+        width: 100%;
+        /* height: 100vh; */
+        /* Adjust the height to fit your image size */
+    }
+
+    .img-banner {
+        width: 100%;
+    }
+
+    .w-lg-75 {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .your-container-class {
+            position: relative;
+            width: 100%;
+            /* Set the aspect ratio to 4:3 (75% = 3/4 * 100%) */
+            padding-top: 90%;
+            overflow: hidden;
+        }
+
+        .img-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* This ensures the image fills the container */
+        }
+
+        .banner-area .content {
+            padding: 0;
+            top: 50%;
+        }
+
+        .w-lg-75 {
+            width: 100%;
+        }
+    }
+</style>
 <!-- Start Banner 
     ============================================= -->
-<div class="banner-area auto-height text-color bg-gray inc-shape">
+<!-- <div class="banner-area auto-height text-color bg-gray inc-shape">
     <div class="item">
         <div class="container">
-            <div class="row align-center">
-
+            <div class="row align-center" >
                 <div class="col-lg-6">
                     <div class="content">
                         <h4 class="wow fadeInUp">Optimize IT Systems </h4>
@@ -20,6 +66,40 @@
                 </div>
             </div>
         </div>
+    </div>
+</div> -->
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item your-container-class active">
+            <img src="assets/img/banner_2.png" class="d-block img-banner" alt="..." style="opacity: 0.75;">
+            <div class="carousel-caption d-md-block">
+                <div class="banner-area text-color text-left">
+                    <div class="content">
+                        <h4 class="wow fadeInUp text-white">Optimize IT Systems </h4>
+                        <h2 class="wow fadeInDown text-white">Creating a better <strong>IT solutions</strong></h2>
+                        <p class="wow fadeInLeft w-lg-75" style="color:#d6d6d6;">
+                            Affixed pretend account ten natural. Need eat week even yet that. Incommode delighted he resolving sportsmen do in listening.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item your-container-class">
+            <img src="assets/img/banner_3.png" class="d-block img-banner" alt="..." style="opacity: 0.75;">
+            <div class="carousel-caption d-md-block">
+                <div class="banner-area text-color text-left">
+                    <div class="content">
+                        <h4 class="wow fadeInUp text-white">Data Center and Cloud</h4>
+                        <h2 class="wow fadeInDown text-white">Hyper Converged <strong>Infrastructure</strong></h2>
+                        <p class="wow fadeInLeft w-lg-75" style="color:#d6d6d6;">
+                            Experience Seamless IT Evolution Unlock the Power of Hyperconverged Infrastructure (HCI)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 <!-- End Banner -->
@@ -70,7 +150,7 @@
                     <i class="fa fa-play"></i> <span>Video Showcase</span>
                 </a>
                 <div class="item mt-5">
-                    <i class="flaticon-cloud-storage"></i>
+                    <i class="flaticon-analysis-1"></i>
                     <h5><a href="#">Digital Marketing</a></h5>
                     <p>
                         ค้นหาช่องทางการตลาดดิจิทัลเชิงกลยุทธ์กับเรา กระตุ้นการมีส่วนร่วม ดึงดูดลูกค้า และบรรลุเป้าหมายทางธุรกิจของคุณผ่านกลยุทธ์ออนไลน์ที่ขับเคลื่อนด้วยข้อมูล ให้เราขยายสถานะออนไลน์ของคุณและเติมพลังความสำเร็จในโลกดิจิทัล
@@ -83,7 +163,7 @@
                     <div class="col-lg-6 col-md-6 item-grid">
                         <!-- Single Item -->
                         <div class="item">
-                            <i class="fa-solid fa-mobile-screen"></i>
+                            <i class="flaticon-cogwheel"></i>
                             <h5><a href="#">Enterprise Application</a></h5>
                             <p>
                                 เป็นโซลูชั่นที่ทางบริษัท ได้มีการค้นคว้าและพัฒนา เพื่อให้ตอบโจทย์ เทคโนโลยียุคใหม่
@@ -118,13 +198,12 @@
                             <i class="flaticon-backup"></i>
                             <h5><a href="#">IT Support</a></h5>
                             <p>
-                            ผู้เชี่ยวชาญฝ่ายสนับสนุนด้านไอทีสำหรับโซลูชันเทคโนโลยีที่ไร้รอยต่อและการแก้ไขปัญหาที่รวดเร็ว
+                                ผู้เชี่ยวชาญฝ่ายสนับสนุนด้านไอทีสำหรับโซลูชันเทคโนโลยีที่ไร้รอยต่อและการแก้ไขปัญหาที่รวดเร็ว
                             </p>
                         </div>
                         <!-- End Single Item -->
                     </div>
                     <!-- End Item Grid -->
-
 
                 </div>
             </div>

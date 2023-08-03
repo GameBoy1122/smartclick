@@ -1,0 +1,3 @@
+<link href="<?php echo assetsTemplateBackendHelper("layouts/layout/css/layout.min.css");?>" rel="stylesheet" type="text/css" />
+<link href="<?php echo assetsTemplateBackendHelper("layouts/layout/css/themes/default.min.css");?>" rel="stylesheet" type="text/css" id="style_color" />
+<link href="<?php echo assetsTemplateBackendHelper("layouts/layout/css/custom.min.css");?>" rel="stylesheet" type="text/css" />

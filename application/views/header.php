@@ -149,6 +149,9 @@
                         <li>
                             <a href="<?php echo base_url('contact') ?>">Contact</a>
                         </li>
+                        <li>
+                            <a href="<?php echo base_url('contact') ?>">TH/EN</a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>

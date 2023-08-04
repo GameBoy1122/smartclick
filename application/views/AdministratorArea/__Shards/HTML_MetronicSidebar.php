@@ -202,20 +202,6 @@ $head_open = "kt-menu__item--here kt-menu__item--open";
                                         <span class="kt-menu__link-text">Banner main</span>
                                     </a>
                                 </li>
-
-
-                                <!-- <li class="kt-menu__item kt-menu__item--<?php if ($class == 'Landingpage') echo 'active';
-                                                                                else echo ''; ?>" aria-haspopup="true">
-
-                                    <a href="<?php echo base_url("AdministratorArea/landingpage/edit/1") ?>" class="kt-menu__link ">
-
-                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-
-                                        <span class="kt-menu__link-text">Landing page</span>
-                                    </a>
-                                </li> -->
-
-
                             </ul>
                         </div>
 
@@ -256,109 +242,7 @@ $head_open = "kt-menu__item--here kt-menu__item--open";
 
                     </li>
 
-                    <li class="kt-menu__item kt-menu__item--submenu <?php if ($class == 'Ourservices') echo $head_open;
-                                                                    else echo ''; ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-
-                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-
-                            <i class="kt-menu__link-icon flaticon-user"></i>
-
-                            <span class="kt-menu__link-text">OURSERVICES</span>
-
-                            <i class="kt-menu__ver-arrow la la-angle-right"></i>
-
-                        </a>
-
-                        <div class="kt-menu__submenu " kt-hidden-height="80" style="">
-
-                            <span class="kt-menu__arrow"></span>
-
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item kt-menu__item--<?php if ($class == 'Ourservices') echo 'active';
-                                                                        else echo ''; ?>" aria-haspopup="true">
-
-                                    <a href="<?php echo base_url("AdministratorArea/Ourservices") ?>" class="kt-menu__link ">
-
-                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-
-                                        <span class="kt-menu__link-text">Ourservices</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li class="kt-menu__item kt-menu__item--submenu <?php if ($class == 'Treatment') echo $head_open;
-                                                                    else echo ''; ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-
-                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-
-                            <i class="kt-menu__link-icon flaticon-user"></i>
-
-                            <span class="kt-menu__link-text">TREATMENT</span>
-
-                            <i class="kt-menu__ver-arrow la la-angle-right"></i>
-
-                        </a>
-
-                        <div class="kt-menu__submenu " kt-hidden-height="80" style="">
-
-                            <span class="kt-menu__arrow"></span>
-
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item kt-menu__item--<?php if ($class == 'Treatment') echo 'active';
-                                                                        else echo ''; ?>" aria-haspopup="true">
-
-                                    <a href="<?php echo base_url("AdministratorArea/Treatment") ?>" class="kt-menu__link ">
-
-                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-
-                                        <span class="kt-menu__link-text">Treatment</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </li>
-
-                    <li class="kt-menu__item kt-menu__item--submenu <?php if ($class == 'Review') echo $head_open;
-                                                                    else echo ''; ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-
-                            <i class="kt-menu__link-icon flaticon-user"></i>
-
-                            <span class="kt-menu__link-text">REVIEW</span>
-
-                            <i class="kt-menu__ver-arrow la la-angle-right"></i>
-
-                        </a>
-
-                        <div class="kt-menu__submenu " kt-hidden-height="80" style="">
-
-                            <span class="kt-menu__arrow"></span>
-
-                            <ul class="kt-menu__subnav">
-
-                                <li class="kt-menu__item kt-menu__item--<?php if ($class == 'Review') echo 'active';
-                                                                        else echo ''; ?>" aria-haspopup="true">
-
-                                    <a href="<?php echo base_url("AdministratorArea/Review") ?>" class="kt-menu__link ">
-
-                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-
-                                        <span class="kt-menu__link-text">Review</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </li>
-
+                  
                     <li class="kt-menu__item kt-menu__item--submenu <?php if ($class == 'Knowledge') echo $head_open;
                                                                     else echo ''; ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
 

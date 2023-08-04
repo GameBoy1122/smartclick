@@ -158,8 +158,7 @@ $db['default'] = array(
 
 	'password' => 'root',
 
-	'database' => 'sfitone_db',
-
+	'database' => 'smartclick_db',
 
 	'dbdriver' => 'mysqli',
 

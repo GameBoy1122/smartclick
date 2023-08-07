@@ -34,6 +34,7 @@ $configurations = array(
 
 
 
+
     <!-- META TAG AREA -->
 
     <meta charset="utf-8" />
@@ -510,7 +511,7 @@ $configurations = array(
 
                     {
 
-                        field: 'news_id',
+                        field: 'News_id',
 
                         title: '#',
 
@@ -527,9 +528,9 @@ $configurations = array(
                     },
                     {
 
-                        field: 'title',
+                        field: 'title_th',
 
-                        title: 'TITLE',
+                        title: 'TITLE TH',
 
 
 
@@ -539,19 +540,19 @@ $configurations = array(
 
                     },
 
-                    // {
+                    {
 
-                    //     field: 'description',
+                        field: 'description_th',
 
-                    //     title: 'DESCRIPTION',
+                        title: 'DESCRIPTION TH',
 
 
 
-                    //     autoHide: false,
+                        autoHide: false,
 
-                    //     textAlign: 'center',
+                        textAlign: 'center',
 
-                    // },
+                    },
 
                     {
 
@@ -579,7 +580,7 @@ $configurations = array(
 
                         template: function(row) {
 
-                            var db_id = row['news_id'];
+                            var db_id = row['id'];
 
                             var action_header = '<a href="<?php echo base_url('AdministratorArea/News/edit/'); ?>' + db_id + '"class="btn btn-sm btn-clean btn-icon btn-icon-sm" title="Edit details">' +
 

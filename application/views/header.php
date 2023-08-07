@@ -36,6 +36,13 @@
     <![endif]-->
 
 </head>
+<?php
+$codeigniter_instance = &get_instance();
+$ln = $codeigniter_instance->session->userdata("CURRENT_LANGUAGE");
+$actual_link = base_url();
+$current_url_array = $_SERVER['REQUEST_URI'];
+$current_url_array = explode("/", uri_string());
+?>
 
 <body>
 
@@ -110,49 +117,81 @@
                     <a class="navbar-brand" href="<?php echo base_url('') ?>">
                         <img src="<?php echo base_url('') ?>assets/img/logo.png" class="logo" alt="Logo">
                     </a>
+                    <ul class="navbar-ln">
+                    <li class="contact">
+                            <?php if ($ln == 'th') { ?>
+                                <a class="ln_active" href="<?php echo base_url("language/change/th?url=" . $actual_link); ?>">TH</a>
+                            <?php } else { ?>
+                                <a href="<?php echo base_url("language/change/th?url=" . $actual_link); ?>">TH</a>
+                            <?php } ?>
+                            |
+                            <?php if ($ln == 'en') { ?>
+                                <a class="ln_active" href="<?php echo base_url("language/change/en?url=" . $actual_link); ?>">EN</a>
+                            <?php } else { ?>
+                                <a href="<?php echo base_url("language/change/en?url=" . $actual_link); ?>">EN</a>
+                            <?php } ?>
+                        </li>
+                    </ul>
                 </div>
                 <!-- End Header Navigation -->
+
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav inc-border">
+                    <ul>
+                        <li class="contact">
+                            <?php if ($ln == 'th') { ?>
+                                <a class="ln_active" href="<?php echo base_url("language/change/th?url=" . $actual_link); ?>">TH</a>
+                            <?php } else { ?>
+                                <a href="<?php echo base_url("language/change/th?url=" . $actual_link); ?>">TH</a>
+                            <?php } ?>
+                            |
+                            <?php if ($ln == 'en') { ?>
+                                <a class="ln_active" href="<?php echo base_url("language/change/en?url=" . $actual_link); ?>">EN</a>
+                            <?php } else { ?>
+                                <a href="<?php echo base_url("language/change/en?url=" . $actual_link); ?>">EN</a>
+                            <?php } ?>
+                        </li>
+                    </ul>
+                </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                         <li>
-                            <a href="<?php echo base_url('') ?>">Home</a>
+                            <a href="<?php echo base_url('') ?>"><?php echo getWording('index_menu', 'homepage') ?></a>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo getWording('index_menu', 'about') ?></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('About/company') ?>">Company Profile</a></li>
-                                <li><a href="<?php echo base_url('About/timeline') ?>">Timeline</a></li>
-                                <li><a href="<?php echo base_url('About/message') ?>">Message From CEO</a></li>
-                                <li><a href="<?php echo base_url('About/management') ?>">Management</a></li>
+                                <li><a href="<?php echo base_url('About/company') ?>"><?php echo getWording('index_menu', 'companyprofile') ?></a></li>
+                                <li><a href="<?php echo base_url('About/timeline') ?>"><?php echo getWording('index_menu', 'history') ?></a></li>
+                                <li><a href="<?php echo base_url('About/message') ?>"><?php echo getWording('index_menu', 'message') ?></a></li>
+                                <li><a href="<?php echo base_url('About/management') ?>"><?php echo getWording('index_menu', 'management') ?></a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solution</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo getWording('index_menu', 'solution') ?></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Solution/enterprise') ?>">Enterprise Application</a></li>
-                                <li><a href="<?php echo base_url('Solution/datacenter') ?>">Data Center and Cloud</a></li>
-                                <li><a href="<?php echo base_url('Solution/digital') ?>">Digital Marketing</a></li>
-                                <li><a href="<?php echo base_url('Solution/streaming') ?>">Streaming Solution</a></li>
-                                <li><a href="<?php echo base_url('Solution/support') ?>">IT Support</a></li>
+                                <li><a href="<?php echo base_url('solutions/enterprise-application') ?>"><?php echo getWording('index_menu', 'enterprise_application') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/cloud-datacenter') ?>"><?php echo getWording('index_menu', 'datacenter') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/digital-marketing') ?>"><?php echo getWording('index_menu', 'marketing') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/streaming') ?>"><?php echo getWording('index_menu', 'streaming') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/it-support') ?>"><?php echo getWording('index_menu', 'it_support') ?></a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Knowledge/News</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo getWording('index_menu', 'knowledge/news') ?></a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo base_url('Knowledge') ?>">Knowledge</a></li>
-                                <li><a href="<?php echo base_url('News') ?>">News</a></li>
-                                <li><a href="<?php echo base_url('Seminar') ?>">Seminar</a></li>
+                                <li><a href="<?php echo base_url('Knowledge') ?>"><?php echo getWording('index_menu', 'knowledge') ?></a></li>
+                                <li><a href="<?php echo base_url('News') ?>"><?php echo getWording('index_menu', 'news') ?></a></li>
+                                <li><a href="<?php echo base_url('Seminar') ?>"><?php echo getWording('index_menu', 'seminar') ?></a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('contact') ?>">Contact</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url('contact') ?>">TH/EN</a>
+                            <a href="<?php echo base_url('contact') ?>"><?php echo getWording('index_menu', 'contact_us') ?></a>
                         </li>
                     </ul>
+
                 </div><!-- /.navbar-collapse -->
             </div>
 

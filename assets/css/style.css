@@ -126,7 +126,10 @@ label {
   margin-bottom: 5px;
   max-width: 100%;
 }
-
+.ln_active {
+  color: #001d4c !important;
+  text-decoration: underline;
+}
 a,
 .btn,
 button {

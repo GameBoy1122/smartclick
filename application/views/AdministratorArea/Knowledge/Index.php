@@ -511,7 +511,7 @@ $configurations = array(
 
                     {
 
-                        field: 'knowledge_id',
+                        field: 'id',
 
                         title: '#',
 
@@ -542,9 +542,9 @@ $configurations = array(
 
                     {
 
-                        field: 'description_th',
+                        field: 'short_description_th',
 
-                        title: 'DESCRIPTION TH',
+                        title: 'SHORT DESCRIPTION TH',
 
 
 

@@ -46,7 +46,7 @@ $configurations = array(
 
     <link href="<?php echo base_url('/assets/images/icon-web/Logo_main.png') ?>" rel="shortcut icon" />
 
-    <title><?php echo $this->config->item('WEBSITE_NAME');?> | Admin System</title>
+    <title><?php echo $this->config->item('WEBSITE_NAME'); ?> | Admin System</title>
 
 
 
@@ -88,8 +88,15 @@ $configurations = array(
 
     <!--end::Global Theme Styles -->
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
+    <style>
+        .note-popover {
+            display: none !important;
+        }
+    </style>
     <!--begin::Layout Skins(used by all pages) -->
 
     <link href="<?php echo assetsDirectory("dist/assets/css/skins/header/base/light.css") ?>" rel="stylesheet" type="text/css" />
@@ -340,8 +347,7 @@ $configurations = array(
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="col-12">
-                                                                    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-                                                                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
                                                                     <nav>
                                                                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                                                             <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
@@ -349,9 +355,6 @@ $configurations = array(
                                                                             </a>
                                                                             <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
                                                                                 <p style="font-size: 1.1rem;font-weight: 600;margin-bottom: 0.5rem;color: #5d78ff;">Information EN</p>
-                                                                            </a>
-                                                                            <a class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
-                                                                                <p style="font-size: 1.1rem;font-weight: 600;margin-bottom: 0.5rem;color: #5d78ff;">Information AE</p>
                                                                             </a>
                                                                         </div>
                                                                     </nav>
@@ -369,7 +372,7 @@ $configurations = array(
                                                                                     <textarea class="summernote" id="short_description_th" name="short_description_th"><?php if (isset($Knowledge->short_description_th)) echo $Knowledge->short_description_th; ?></textarea>
                                                                                 </div>
                                                                             </div>
-                                                                            
+
                                                                             <div class="form-group row">
                                                                                 <label class="col-lg-3 col-form-label" align="right">Description TH</label>
                                                                                 <div class="col-lg-6 col-xl-7">
@@ -398,28 +401,7 @@ $configurations = array(
                                                                             </div>
 
                                                                         </div>
-                                                                        <div class="tab-pane fade mt-5" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                                                            <div class="form-group row">
-                                                                                <label class="col-lg-3 col-form-label" align="right">Title AE</label>
-                                                                                <div class="col-lg-6 col-xl-7">
-                                                                                    <input type="text" class="form-control" name="title_ae" value="<?php if (isset($Knowledge->title_ae)) echo $Knowledge->title_ae ?>">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-lg-3 col-form-label" align="right">Short Description AE</label>
-                                                                                <div class="col-lg-6 col-xl-7">
-                                                                                    <textarea class="summernote" id="short_description_ae" name="short_description_ae"><?php if (isset($Knowledge->short_description_ae)) echo $Knowledge->short_description_ae; ?></textarea>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-group row">
-                                                                                <label class="col-lg-3 col-form-label" align="right">Description AE</label>
-                                                                                <div class="col-lg-6 col-xl-7">
-                                                                                    <textarea class="summernote" id="description_ae" name="description_ae"><?php if (isset($Knowledge->description_ae)) echo $Knowledge->description_ae; ?></textarea>
-                                                                                </div>
-                                                                            </div>
 
-
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

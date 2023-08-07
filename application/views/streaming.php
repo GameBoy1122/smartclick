@@ -1,16 +1,20 @@
 <!-- Start Breadcrumb 
     ============================================= -->
-    <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(<?php echo base_url('assets/img/2440x1578.png') ?>);">
+    <?php if ($solution_category->image != "") {
+    $banner = base_url('') . $solution_category->image;
+} else {
+    $banner = base_url('assets/img/2440x1578.png');
+} ?>
+<div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(<?php echo $banner ?>);">
     <div class="container">
         <div class="row align-center">
             <div class="col-lg-6">
-                <h2>Streaming Solution</h2>
+                <h2><?php echo getVariable($solution_category, 'title') ?></h2>
             </div>
             <div class="col-lg-6 text-right">
                 <ul class="breadcrumb">
-                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="<?php echo base_url('Solution') ?>">Solution</a></li>
-                    <li class="active">Streaming Solution</li>
+                    <li><a href="#"><i class="fas fa-home"></i><?php echo getWording('index_menu', 'homepage') ?></a></li>
+                    <li class="active"><?php echo getVariable($solution_category, 'title') ?></li>
                 </ul>
             </div>
         </div>
@@ -18,76 +22,57 @@
 </div>
 <!-- End Breadcrumb -->
 
-<!-- Start Services Details 
+<!-- Start Services 
     ============================================= -->
-<div class="services-details-area default-padding">
+<div class="service-area default-padding bottom-less bg-cover">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 content">
-                <div class="thumb">
-                    <img src="<?php echo base_url('') ?>assets/img/1500x700.png" alt="Thumb">
-                </div>
-                <h2>Content Overview</h2>
-                <p>
-                    Kindness own whatever betrayed her moreover procured replying for and. Proposal indulged no do do sociable he throwing settling. Covered ten nor comfort offices carried. Age she way earnestly the fulfilled extremely. Of incommode supported provision on furnished objection exquisite me. Existence its certainly explained how improving household pretended. Delightful own attachment her partiality.
-                </p>
-                <p>
-                    Kindness own whatever betrayed her moreover procured replying for and. Proposal indulged no do do sociable he throwing settling. Covered ten nor comfort offices carried. Age she way earnestly the fulfilled extremely. Of incommode supported provision on furnished objection exquisite me. Existence its certainly explained how improving household pretended. Delightful own attachment her partiality.
-                </p>
-                <h4>Why Choose Us</h4>
-                <ul>
-                    <li>Up am intention on dependent questions</li>
-                    <li>Feelings laughing at no wondered repeated provided finished.</li>
-                    <li>Improve ashamed married expense bed her comfort pursuit</li>
-                    <li>Surrounded affronting favourable</li>
-                </ul>
-                <p>
-                    Kindness own whatever betrayed her moreover procured replying for and. Proposal indulged no do do sociable he throwing settling. Covered ten nor comfort offices carried. Age she way earnestly the fulfilled extremely. Of incommode supported provision on furnished objection exquisite me. Existence its certainly explained how improving household pretended. Delightful own attachment her partiality.
-                </p>
-                <h3>Proposal indulged no do?</h3>
-                <p>
-                    Kindness own whatever betrayed her moreover procured replying for and. Proposal indulged no do do sociable he throwing settling. Covered ten nor comfort offices carried. Age she way earnestly the fulfilled extremely. Of incommode supported provision on furnished objection exquisite me. Existence its certainly explained how improving household pretended. Delightful own attachment her partiality. eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                </p>
-                <div class="row thumbs">
-                    <div class="col-lg-6 col-md-6">
-                        <img src="<?php echo base_url('') ?>assets/img/800x600.png" alt="Thumb">
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <img src="<?php echo base_url('') ?>assets/img/800x600.png" alt="Thumb">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 sidebar">
-                <div class="sidebar-item link">
-                    <ul>
-                        <li><a href="<?php echo base_url('Solution') ?>">Enterprise Application</a></li>
-                        <li><a href="<?php echo base_url('Solution') ?>">Data Center and Cloud </a></li>
-                        <li><a href="<?php echo base_url('Solution') ?>">Digital Marketing</a></li>
-                        <li><a class="active"  href="<?php echo base_url('Solution') ?>">Streaming Solution</a></li>
-                        <li><a href="<?php echo base_url('Solution') ?>">IT Support</a></li>
-                    </ul>
-                </div>
-                <div class="sidebar-item banner">
-                    <div class="thumb">
-                        <img src="<?php echo base_url('') ?>assets/img/800x800.png" alt="Thumb">
-                        <div class="content">
-                            <h5>Have Additional Questions?</h5>
-                            <h3><i class="fas fa-phone"></i> +123 456 7890</h3>
+        <div class="service-items text-center">
+            <div class="row">
+                <!-- Single item -->
+                <?php foreach ($solution as $key => $solution_list) { ?>
+                    <div class="col-lg-4 col-md-6 single-item">
+                        <div class="item">
+                            <div class="info">
+                                <?php if ($solution_list->icon != "") { ?>
+                                    <img class="pb-3" style="width: 84px;" src="<?php echo base_url('') . $solution_list->icon ?>" alt="">
+                                <?php } else { ?>
+                                    <i class="flaticon-cogwheel"></i>
+                                <?php } ?>
+
+                                <h5><a href="<?php echo base_url('solutions/') . $solution_list->seo_slug ?>"><?php echo getVariable($solution_list, 'title') ?></a></h5>
+                                <p>
+                                    <?php echo getVariable($solution_list, 'short_description') ?>
+                                </p>
+                                <a class="btn-standard" href="<?php echo base_url('solutions/') . $solution_list->seo_slug ?>">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="sidebar-item brochure">
-                    <div class="title">
-                        <h4>Brochure</h4>
-                    </div>
-                    <p>
-                        Existence its certainly explained how improving household pretended.
-                    </p>
-                    <a href="#"><i class="fas fa-file-pdf"></i> Download Service</a>
-                    <a href="#"><i class="fas fa-file-archive"></i> Download Features</a>
+                <?php } ?>
+                <!-- End Single item -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Services Area -->
+
+<!-- Start Clients 
+    ============================================= -->
+<div class="clients-area default-padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="clients-carousel owl-carousel owl-theme">
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
+                    <a href="#"><img src="<?php echo base_url('assets/img/150x80.png') ?>" alt="Client"></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- End Services Details -->
+<!-- End Clients Area -->

@@ -22,9 +22,9 @@ class News_model extends CI_Model
 
 
 
-    private $table_name = "news";
+    private $table_name = "News";
 
-    private $table_primary_key = "news_id";
+    private $table_primary_key = "id";
 
     private $table_columns;
 

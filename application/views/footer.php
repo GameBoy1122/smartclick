@@ -12,41 +12,41 @@
 
                 <div class="col-lg-2 col-md-6 item">
                     <div class="f-item link">
-                        <h4 class="widget-title">About</h4>
+                        <h4 class="widget-title"><?php echo getWording('index_menu', 'about') ?></h4>
                         <ul>
-                            <li><a href="<?php echo base_url('About/company') ?>">Company Profile</a></li>
-                            <li><a href="<?php echo base_url('About/timeline') ?>">Timeline</a></li>
-                            <li><a href="<?php echo base_url('About/message') ?>">Message From CEO</a></li>
-                            <li><a href="<?php echo base_url('About/management') ?>">Management</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 item">
-                    <div class="f-item link">
-                        <h4 class="widget-title">Solutions</h4>
-                        <ul>
-                            <li><a href="<?php echo base_url('') ?>">Enterprise Application</a></li>
-                            <li><a href="<?php echo base_url('') ?>">Data Center and Cloud </a></li>
-                            <li><a href="<?php echo base_url('') ?>">Digital Marketing</a></li>
-                            <li><a href="<?php echo base_url('') ?>">Streaming Solution</a></li>
-                            <li><a href="<?php echo base_url('') ?>">IT Support</a></li>
+                            <li><a href="<?php echo base_url('About/company') ?>"><?php echo getWording('index_menu', 'companyprofile') ?></a></li>
+                            <li><a href="<?php echo base_url('About/timeline') ?>"><?php echo getWording('index_menu', 'history') ?></a></li>
+                            <li><a href="<?php echo base_url('About/message') ?>"><?php echo getWording('index_menu', 'message') ?></a></li>
+                            <li><a href="<?php echo base_url('About/management') ?>"><?php echo getWording('index_menu', 'management') ?></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 item">
                     <div class="f-item link">
-                        <h4 class="widget-title">Knowledge/News</h4>
+                        <h4 class="widget-title"><?php echo getWording('index_menu', 'solution') ?></h4>
                         <ul>
-                            <li><a href="<?php echo base_url('Knowledge') ?>">Knowledge</a></li>
-                            <li><a href="<?php echo base_url('News') ?>">News</a></li>
-                            <li><a href="<?php echo base_url('Seminar') ?>">Seminar</a></li>
+                        <li><a href="<?php echo base_url('solutions/enterprise-application') ?>"><?php echo getWording('index_menu', 'enterprise_application') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/cloud-datacenter') ?>"><?php echo getWording('index_menu', 'datacenter') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/digital-marketing') ?>"><?php echo getWording('index_menu', 'marketing') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/streaming') ?>"><?php echo getWording('index_menu', 'streaming') ?></a></li>
+                                <li><a href="<?php echo base_url('solutions/it-support') ?>"><?php echo getWording('index_menu', 'it_support') ?></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 item">
+                    <div class="f-item link">
+                        <h4 class="widget-title"><?php echo getWording('index_menu', 'knowledge/news') ?></h4>
+                        <ul>
+                            <li><a href="<?php echo base_url('Knowledge') ?>"><?php echo getWording('index_menu', 'knowledge') ?></a></li>
+                            <li><a href="<?php echo base_url('News') ?>"><?php echo getWording('index_menu', 'news') ?></a></li>
+                            <li><a href="<?php echo base_url('Seminar') ?>"><?php echo getWording('index_menu', 'seminar') ?></a></li>
                         </ul>
                     </div>
                     <div class="f-item link mt-5">
-                        <h4 class="widget-title">Contact</h4>
+                        <h4 class="widget-title"><?php echo getWording('index_menu', 'contact_us') ?></h4>
                         <ul>
                             <li>
-                                <a href="<?php echo base_url('contact') ?>">Contact</a>
+                                <a href="<?php echo base_url('contact') ?>"><?php echo getWording('index_menu', 'contact_us') ?></a>
                             </li>
                         </ul>
                     </div>
@@ -63,11 +63,11 @@
                                 </li>
                                 <li>
                                     <strong>Email:</strong>
-                                    <a href="info@smartclick.co.th">info@smartclick.co.th</a>
+                                    <a href="mailto:info@smartclick.co.th">info@smartclick.co.th</a>
                                 </li>
                                 <li>
                                     <strong>Tel:</strong>
-                                    (+66)02-664-2926
+                                    <a href="tel:(+66)02-664-2926">(+66)02-664-2926</a>
                                 </li>
                             </ul>
                         </div>

@@ -202,7 +202,7 @@ $db['master_query'] = array(
 
 	'password' => 'root',
 
-	'database' => 'sfitone_db',
+	'database' => 'smartclick_db',
 
 	'dbdriver' => 'mysqli',
 
@@ -246,7 +246,7 @@ $db['master_report'] = array(
 
 	'password' => 'root',
 
-	'database' => 'sfitone_db',
+	'database' => 'smartclick_db',
 
 	'dbdriver' => 'mysqli',
 
@@ -290,7 +290,7 @@ $db['master_modify'] = array(
 
 	'password' => 'root',
 
-	'database' => 'sfitone_db',
+	'database' => 'smartclick_db',
 
 	'dbdriver' => 'mysqli',
 

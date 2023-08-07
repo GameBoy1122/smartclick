@@ -297,6 +297,10 @@ nav.navbar.bootsnav.nav-box .navbar-brand {
   border-radius: 4px;
 }
 
+.navbar-ln {
+  display: none;
+}
+
 .navbar-toggle:focus {
   outline: 0;
 }
@@ -2323,7 +2327,14 @@ nav.navbar.bootsnav {
     display: inline-block;
     float: left;
     margin-right: -200px;
-    margin-top: 20px;
+    margin-top: 25px;
+  }
+
+  nav.navbar.bootsnav .navbar-ln {
+    display: inline-block;
+    float: right;
+    /* margin-right: -200px; */
+    margin-top: 30px;
   }
 
   nav.navbar.bootsnav.navbar-fixed.no-background {

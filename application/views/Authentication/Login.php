@@ -54,7 +54,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <link href="<?php echo base_url('/assets/img/.png') ;?>" rel="shortcut icon" />
 
-    <title>Advanced Security Mangement Program | Admin System</title>
+    <title><?php echo $this->config->item('WEBSITE_NAME');?>  | Admin System</title>
 
     <meta name="description" content="Login page example">
 

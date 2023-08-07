@@ -103,13 +103,10 @@ class Knowledge extends CI_Controller
             $Knowledge->status = $this->input->post("status");
             $Knowledge->title_en = $this->input->post("title_en");
             $Knowledge->title_th = $this->input->post("title_th");
-            $Knowledge->title_ae = $this->input->post("title_ae");
             $Knowledge->short_description_en = $this->input->post("short_description_en");
             $Knowledge->short_description_th = $this->input->post("short_description_th");
-            $Knowledge->short_description_ae = $this->input->post("short_description_ae");
             $Knowledge->description_en = $this->input->post("description_en");
             $Knowledge->description_th = $this->input->post("description_th");
-            $Knowledge->description_ae = $this->input->post("description_ae");
 
 
             if($_FILES['image']['size']['th'] > 0)

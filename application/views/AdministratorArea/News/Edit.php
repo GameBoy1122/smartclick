@@ -46,7 +46,7 @@ $configurations = array(
 
     <link href="<?php echo base_url('/assets/images/icon-web/Logo_main.png') ?>" rel="shortcut icon" />
 
-    <title><?php echo $this->config->item('WEBSITE_NAME');?> | Admin System</title>
+    <title><?php echo $this->config->item('WEBSITE_NAME'); ?> | Admin System</title>
 
 
 
@@ -88,8 +88,15 @@ $configurations = array(
 
     <!--end::Global Theme Styles -->
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
+    <style>
+        .note-popover {
+            display: none !important;
+        }
+    </style>
     <!--begin::Layout Skins(used by all pages) -->
 
     <link href="<?php echo assetsDirectory("dist/assets/css/skins/header/base/light.css") ?>" rel="stylesheet" type="text/css" />
@@ -178,230 +185,256 @@ $configurations = array(
 
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
-                        <!--begin::Portlet-->
+                        <?php if (checkAdministratorPermission("CONTENT_MANAGEMENT", "edit")) { ?>
 
+                            <!--begin::Portlet-->
 
-                        <div class="kt-portlet kt-faq-v1">
+                            <div class="kt-portlet kt-faq-v1">
 
-                            <?php $this->load->view("AdministratorArea/__Shards/HTML_MetronicSubHeader", array()); ?>
+                                <?php $this->load->view("AdministratorArea/__Shards/HTML_MetronicSubHeader", array()); ?>
 
-                            <div class="kt-portlet__head kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
+                                <div class="kt-portlet__head kt-iconbox kt-iconbox--brand kt-iconbox--animate-slow">
 
-                                <div class="kt-portlet__head-label">
+                                    <div class="kt-portlet__head-label">
 
-                                    <span class="kt-portlet__head-icon">
+                                        <span class="kt-portlet__head-icon">
 
-                                        <i class="kt-font-brand <?php echo $configurations["PORTLET_HEADER"]["ICON"] ?>"></i>
+                                            <i class="kt-font-brand <?php echo $configurations["PORTLET_HEADER"]["ICON"] ?>"></i>
 
-                                    </span>
+                                        </span>
 
-                                    <h3 class="kt-portlet__head-title">
+                                        <h3 class="kt-portlet__head-title">
 
-                                        <?php echo $configurations["PAGE_TITLE"] ?>
+                                            <?php echo $configurations["PAGE_TITLE"] ?>
 
-                                        <small>
+                                            <small>
 
-                                            <?php echo $configurations["PAGE_HEADER"]["SUB_TITLE"] ?>
+                                                <?php echo $configurations["PAGE_HEADER"]["SUB_TITLE"] ?>
 
-                                        </small>
+                                            </small>
 
-                                    </h3>
+                                        </h3>
+
+                                    </div>
 
                                 </div>
 
-                            </div>
+                                <div class="kt-portlet__body">
 
-                            <div class="kt-portlet__body">
+                                    <div class="kt-portlet__body kt-portlet__body--fit">
 
-                                <div class="kt-portlet__body kt-portlet__body--fit">
+                                        <div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="step-first">
 
-                                    <div class="kt-grid kt-wizard-v3 kt-wizard-v3--white" id="kt_wizard_v3" data-ktwizard-state="step-first">
+                                            <div class="kt-grid__item">
 
-                                        <div class="kt-grid__item">
+                                                <!--begin: Form Wizard Nav -->
 
-                                            <!--begin: Form Wizard Nav -->
+                                                <div class="kt-wizard-v3__nav">
 
-                                            <div class="kt-wizard-v3__nav">
+                                                    <!--doc: Remove "kt-wizard-v3__nav-items--clickable" class and also set 'clickableSteps: false' in the JS init to disable manually clicking step titles -->
 
-                                                <!--doc: Remove "kt-wizard-v3__nav-items--clickable" class and also set 'clickableSteps: false' in the JS init to disable manually clicking step titles -->
+                                                    <div class="kt-wizard-v3__nav-items kt-wizard-v3__nav-items--clickable">
 
-                                                <div class="kt-wizard-v3__nav-items kt-wizard-v3__nav-items--clickable">
+                                                        <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
 
-                                                    <div class="kt-wizard-v3__nav-item" data-ktwizard-type="step" data-ktwizard-state="current">
+                                                            <div class="kt-wizard-v3__nav-body">
 
-                                                        <div class="kt-wizard-v3__nav-body">
+                                                                <div class="kt-wizard-v3__nav-label">
 
-                                                            <div class="kt-wizard-v3__nav-label">
+                                                                    <span>1</span> Information
 
-                                                                <span>1</span> Information
+                                                                </div>
+
+                                                                <div class="kt-wizard-v3__nav-bar"></div>
 
                                                             </div>
 
-                                                            <div class="kt-wizard-v3__nav-bar"></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!--end: Form Wizard Nav -->
+
+                                            </div>
+
+                                            <form class="kt-form form_data" id="main-form">
+
+                                                <br>
+                                                <div class="form-group row">
+
+
+                                                    <label class="col-lg-3 col-form-label" align="right">STATUS <span style="color: red;"> *</span></label>
+
+                                                    <div class="col-lg-3">
+
+                                                        <div class="kt-radio-inline">
+
+                                                            <label class="kt-radio kt-radio--bold kt-radio--success">
+
+                                                                <input type="radio" name="status" value="ACTIVATE" <?php if (!isset($News->status) || $News->status == "ACTIVATE") echo "checked" ?>> Activate
+
+                                                                <span></span>
+
+                                                            </label>
+
+                                                            <label class="kt-radio kt-radio--bold kt-radio--warning">
+
+                                                                <input type="radio" name="status" value="SUSPEND" <?php if (isset($News->status) && $News->status != "ACTIVATE") echo "checked" ?>> Suspend
+
+                                                                <span></span>
+
+                                                            </label>
 
                                                         </div>
 
                                                     </div>
-                                                </div>
-
-                                            </div>
-
-                                            <!--end: Form Wizard Nav -->
-
-                                        </div>
-
-                                        <form class="kt-form form_data" id="main-form">
-
-                                            <br>
-                                            <div class="form-group row">
-
-
-                                                <label class="col-lg-3 col-form-label" align="right">STATUS <span style="color: red;"> *</span></label>
-
-                                                <div class="col-lg-3">
-
-                                                    <div class="kt-radio-inline">
-
-                                                        <label class="kt-radio kt-radio--bold kt-radio--success">
-
-                                                            <input type="radio" name="status" value="ACTIVATE" <?php if (!isset($News->status) || $News->status == "ACTIVATE") echo "checked" ?>> Activate
-
-                                                            <span></span>
-
-                                                        </label>
-
-                                                        <label class="kt-radio kt-radio--bold kt-radio--warning">
-
-                                                            <input type="radio" name="status" value="SUSPEND" <?php if (isset($News->status) && $News->status != "ACTIVATE") echo "checked" ?>> Suspend
-
-                                                            <span></span>
-
-                                                        </label>
-
-                                                    </div>
 
                                                 </div>
 
-                                            </div>
 
 
+                                                <!--begin: Form th -->
 
-                                            <!--begin: Form th -->
+                                                <div class="kt-wizard-v3__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
 
-                                            <div class="kt-wizard-v3__content" data-ktwizard-type="step-content" data-ktwizard-state="current">
+                                                    <div class="kt-form__section kt-form__section--first">
 
-                                                <div class="kt-form__section kt-form__section--first">
+                                                        <div class="kt-wizard-v3__form">
 
-                                                    <div class="kt-wizard-v3__form">
+                                                            <div class="form-group ">
 
-                                                        <div class="form-group ">
+                                                                <div class="row">
 
-                                                            <div class="row">
+                                                                    <div class="col-lg-12">
 
-                                                                <div class="col-lg-12">
+                                                                        <label class="col-xl-3 col-lg-3 col-form-label" align="right">BANNER </label>
 
-                                                                    <label class="col-xl-3 col-lg-3 col-form-label" align="right">BANNER </label>
+                                                                        <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar1">
 
-                                                                    <div class="kt-avatar kt-avatar--outline" id="kt_user_add_avatar1">
+                                                                            <?php
 
-                                                                        <?php
+                                                                            $image = '';
 
-                                                                        $image = '';
+                                                                            if (isset($News->image) && $News->image != "" && file_exists(FCPATH . $News->image)) {
 
-                                                                        if (isset($News->image) && $News->image != "" && file_exists(FCPATH . $News->image)) {
+                                                                                $image = base_url('' . $News->image);
+                                                                            }
 
-                                                                            $image = base_url(''.$News->image);
-                                                                        }
+                                                                            ?>
 
-                                                                        ?>
+                                                                            <div class="kt-avatar__holder" <?php if (isset($News->image)) echo ' style="background-image:url(' . $image . ');"'; ?>> </div>
 
-                                                                        <div class="kt-avatar__holder" <?php if (isset($News->image)) echo ' style="background-image:url(' . $image . ');"'; ?>> </div>
+                                                                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change Banner">
 
-                                                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="Change Banner">
+                                                                                <i class="fa fa-pen"></i>
 
-                                                                            <i class="fa fa-pen"></i>
+                                                                                <input type="file" name="image[th]">
 
-                                                                            <input type="file" name="image[th]">
+                                                                            </label>
 
-                                                                        </label>
+                                                                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel Banner">
 
-                                                                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="Cancel Banner">
+                                                                                <i class="fa fa-times"></i>
 
-                                                                            <i class="fa fa-times"></i>
+                                                                            </span>
 
-                                                                        </span>
-
+                                                                        </div>
                                                                     </div>
+
                                                                 </div>
 
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-12">
 
-                                                        </div>
-                                                        <div class="form-group row">
+                                                                    <nav>
+                                                                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                                                            <a class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                                                                <p style="font-size: 1.1rem;font-weight: 600;margin-bottom: 0.5rem;color: #5d78ff;"> Information TH</p>
+                                                                            </a>
+                                                                            <a class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                                                                <p style="font-size: 1.1rem;font-weight: 600;margin-bottom: 0.5rem;color: #5d78ff;">Information EN</p>
+                                                                            </a>
+                                                                        </div>
+                                                                    </nav>
+                                                                    <div class="tab-content" id="nav-tabContent">
+                                                                        <div class="tab-pane fade show active mt-5" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Title TH</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <input type="text" class="form-control" name="title_th" value="<?php if (isset($News->title_th)) echo $News->title_th ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Short Description TH</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <textarea class="summernote" id="short_description_th" name="short_description_th"><?php if (isset($News->short_description_th)) echo $News->short_description_th; ?></textarea>
+                                                                                </div>
+                                                                            </div>
 
-                                                            <label class="col-lg-3 col-form-label" align="right">Title</label>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Description TH</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <textarea class="summernote" id="description_th" name="description_th"><?php if (isset($News->description_th)) echo $News->description_th; ?></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="tab-pane fade mt-5" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Title EN</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <input type="text" class="form-control" name="title_en" value="<?php if (isset($News->title_en)) echo $News->title_en ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Short Description EN</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <textarea class="summernote" id="short_description_en" name="short_description_en"><?php if (isset($News->short_description_en)) echo $News->short_description_en; ?></textarea>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-lg-3 col-form-label" align="right">Description EN</label>
+                                                                                <div class="col-lg-6 col-xl-7">
+                                                                                    <textarea class="summernote" id="description_en" name="description_en"><?php if (isset($News->description_en)) echo $News->description_en; ?></textarea>
+                                                                                </div>
+                                                                            </div>
 
-                                                            <div class="col-lg-6 col-xl-7">
+                                                                        </div>
 
-                                                                <input type="text" class="form-control" name="title" value="<?php if (isset($News->title)) echo $News->title ?>">
-
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                         </div>
-                                                       
-                                                        <div class="form-group row">
-
-                                                            <label class="col-lg-3 col-form-label" align="right">Description </label>
-
-                                                            <div class="col-lg-6 col-xl-7">
-
-                                                                <textarea class="summernote" id="description" name="description"><?php if (isset($News->description)) echo $News->description; ?></textarea>
-
-                                                            </div>
-
-                                                        </div>
-                                                       
-                                                        <div class="form-group row">
-
-                                                            <label class="col-lg-3 col-form-label" align="right">View more ( Link )</label>
-
-                                                            <div class="col-lg-6 col-xl-7">
-
-                                                                <input type="text" class="form-control" name="link" value="<?php if (isset($News->link)) echo $News->link ?>">
-
-                                                            </div>
-
-                                                        </div>
-
-
 
                                                     </div>
 
                                                 </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="kt-portlet__foot">
+
+                                    <div class="kt-form__actions">
+
+                                        <div class="row">
+
+                                            <div class="col-lg-3 col-xl-3">
 
                                             </div>
-                                        </form>
-                                    </div>
 
-                                </div>
+                                            <div class="col-lg-9 col-xl-9">
 
-                            </div>
+                                                <button type="button" class="btn btn-primary" id="confirmSave">Save Changes</button>
 
-                            <div class="kt-portlet__foot">
+                                                <button type="button" class="btn btn-outline-danger mr-2" id="kt_sweetalert_cancel">Cancel</button>
 
-                                <div class="kt-form__actions">
-
-                                    <div class="row">
-
-                                        <div class="col-lg-3 col-xl-3">
-
-                                        </div>
-
-                                        <div class="col-lg-9 col-xl-9">
-
-                                            <button type="button" class="btn btn-primary" id="confirmSave">Save Changes</button>
-
-                                            <button type="button" class="btn btn-outline-danger mr-2" id="kt_sweetalert_cancel">Cancel</button>
+                                            </div>
 
                                         </div>
 
@@ -410,13 +443,17 @@ $configurations = array(
                                 </div>
 
                             </div>
-
-                        </div>
-
-
-
-                        <!--end::Portlet-->
-
+                            <!--end::Portlet-->
+                        <?php
+                        } else {
+                        ?>
+                            <center style="color: red;">
+                                <h4>Permission denied</h4><br>
+                                <h5>You are not allow to use this function.</h5>
+                            </center>
+                        <?php
+                        }
+                        ?>
                     </div>
 
                     <!-- end:: Content -->

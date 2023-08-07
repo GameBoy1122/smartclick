@@ -121,9 +121,9 @@
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 info">
-                <h4>"บริษัท สมาร์ทคลิ๊ก โซลูชั่น จำกัด ที่จะตอบสนองทุกความต้องการของคุณ" </h4>
+                <h4> <?php echo getWording('index_menu', 'smartclick_title') ?> </h4>
                 <p>
-                    บริษัท สมาร์ทคลิ๊ก โซลูชั่น จำกัด ก่อตั้งขึ้นในปี พ.ศ. 2547 ดำเนินกิจการทางด้าน Website Development, Mobile Application, Online Marketing, Streaming Solution, IOT, Cloud, AI หรือเรียกได้ว่าเราเป็นศูนย์รวมการให้บริการแบบครบวงจรบนโลกออนไลน์โดยมีวัตถุประสงค์ในการสร้างบริษัทที่มีการให้บริการแบบครบวงจรที่ได้มาตราฐาน มีคุณภาพ ในราคาที่เหมาะสมกับขนาดธุรกิจของลูกค้าและให้ลูกค้าได้รับประโยชน์สูงสุดเมื่อใช้บริการของเรา ตลอดระยะเวลาที่ผ่านมา เรามีบุคลากรที่มีคุณภาพ ประสบการณ์สูงเเละปรับตัวให้เข้ากับโลกเทคโนโลยีที่ทันสมัยอย่างต่อเนื่อง เพื่อให้บริการกับลูกค้าได้อย่างมีประสิทธิภาพ ด้วยเหตุนี้ปัจจุบันจึงมีลูกค้าที่ไว้วางใจใช้บริการกับเรากว่า 500 ราย โดยมีทั้งหน่วยงานราชการ เอกชน และบุคคลทั่วไป
+                    <?php echo getWording('index_menu', 'smartclick_detail') ?>
                 </p>
             </div>
         </div>
@@ -139,45 +139,59 @@
         <img src="assets/img/shape/3.png" alt="Shape">
     </div>
     <!-- End Fixed Shpae  -->
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row" style="padding: 0rem 4rem;">
             <div class="col-lg-5 why-us">
-                <h5>Solution</h5>
+                <h5><?php echo getWording('index_menu', 'solution') ?></h5>
                 <p>
-                    สมาร์ทคลิ๊ก โซลูชั่น เราเข้าใจดีว่าในยุคดิจิทัลในปัจจุบัน ธุรกิจต่างๆ ต้องการโซลูชันที่ล้ำสมัยเพื่อก้าวนำหน้าคู่แข่ง นั่นเป็นเหตุผลที่เรานำเสนอโซลูชันด้านไอที เว็บ และอุปกรณ์เคลื่อนที่ที่หลากหลายซึ่งปรับแต่งให้ตรงกับความต้องการเฉพาะของคุณ ไม่ว่าคุณจะเป็นสตาร์ทอัพขนาดเล็กหรือองค์กรขนาดใหญ่ ทีมผู้เชี่ยวชาญของเราทุ่มเทเพื่อให้บริการชั้นยอดเพื่อช่วยให้ธุรกิจของคุณเติบโต
+                    <?php echo getWording('index_menu', 'solution_detail') ?>
                 </p>
                 <a class="popup-youtube theme relative video-play-button" href="https://www.youtube.com/watch?v=owhuBrGIOsE">
                     <i class="fa fa-play"></i> <span>Video Showcase</span>
                 </a>
-                <div class="item mt-5">
-                    <i class="flaticon-analysis-1"></i>
-                    <h5><a href="#">Digital Marketing</a></h5>
-                    <p>
-                        ค้นหาช่องทางการตลาดดิจิทัลเชิงกลยุทธ์กับเรา กระตุ้นการมีส่วนร่วม ดึงดูดลูกค้า และบรรลุเป้าหมายทางธุรกิจของคุณผ่านกลยุทธ์ออนไลน์ที่ขับเคลื่อนด้วยข้อมูล ให้เราขยายสถานะออนไลน์ของคุณและเติมพลังความสำเร็จในโลกดิจิทัล
-                    </p>
-                </div>
+                <?php foreach ($Solution_category as $key => $Solution_category_list) { ?>
+                    <?php if ($Solution_category_list->title_en == 'Digital Marketing') { ?>
+                        <div class="item mt-5">
+                            <i class="flaticon-globe-grid"></i>
+                            <h5><a href="<?php echo base_url('solutions/digital-marketing') ?>"> <?php echo getVariable($Solution_category_list, 'title') ?></a></h5>
+                            <p>
+                                <?php echo getVariable($Solution_category_list, 'short_description') ?>
+                            </p>
+                        </div>
+                    <?php } ?>
+                <?php } ?>
             </div>
             <div class="col-lg-7 features-box text-center">
                 <div class="row">
                     <!-- Item Grid -->
                     <div class="col-lg-6 col-md-6 item-grid">
                         <!-- Single Item -->
-                        <div class="item">
-                            <i class="flaticon-cogwheel"></i>
-                            <h5><a href="#">Enterprise Application</a></h5>
-                            <p>
-                                เป็นโซลูชั่นที่ทางบริษัท ได้มีการค้นคว้าและพัฒนา เพื่อให้ตอบโจทย์ เทคโนโลยียุคใหม่
-                            </p>
-                        </div>
+                        <?php foreach ($Solution_category as $key => $Solution_category_list) { ?>
+                            <?php if ($Solution_category_list->title_en == 'Enterprise Application') { ?>
+                                <div class="item">
+                                    <i class="flaticon-cogwheel"></i>
+                                    <h5><a href="<?php echo base_url('solutions/enterprise-application') ?>"> <?php echo getVariable($Solution_category_list, 'title') ?></a></h5>
+                                    <p>
+                                        <?php echo getVariable($Solution_category_list, 'short_description') ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
                         <!-- End Single Item -->
                         <!-- Single Item -->
-                        <div class="item">
-                            <i class="flaticon-globe-grid"></i>
-                            <h5><a href="#">Data Center and Cloud</a></h5>
-                            <p>
-                                บริการศูนย์ข้อมูล ที่มีความปลอดภัยสูง และมีบุคลากรที่คอยให้คำปรึกษา ตลอดการใช้งาน
-                            </p>
-                        </div>
+
+                        <?php foreach ($Solution_category as $key => $Solution_category_list) { ?>
+                            <?php if ($Solution_category_list->title_en == 'Data Center and Cloud') { ?>
+                                <div class="item">
+                                    <i class="flaticon-globe-grid"></i>
+                                    <h5><a href="<?php echo base_url('solutions/cloud-datacenter') ?>"> <?php echo getVariable($Solution_category_list, 'title') ?></a></h5>
+                                    <p>
+                                        <?php echo getVariable($Solution_category_list, 'short_description') ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
+
                         <!-- End Single Item -->
                     </div>
                     <!-- End Item Grid -->
@@ -185,22 +199,39 @@
                     <!-- Item Grid -->
                     <div class="col-lg-6 col-md-6 item-grid">
                         <!-- Single Item -->
-                        <div class="item">
-                            <i class="flaticon-cloud-storage"></i>
-                            <h5><a href="#">Streaming Solution</a></h5>
-                            <p>
-                                บริการด้าน media ไม่ว่าจะเป็น ภาพ/เสียง หรือการรับชมพร้อมกันหลาย ๆ user
-                            </p>
-                        </div>
+                        <?php foreach ($Solution_category as $key => $Solution_category_list) { ?>
+                            <?php if ($Solution_category_list->title_en == 'Streaming Solution') { ?>
+                                <div class="item">
+                                    <i class="flaticon-cloud-storage"></i>
+                                    <h5>
+                                        <a href="<?php echo base_url('solutions/streaming') ?>">
+                                            <?php echo getVariable($Solution_category_list, 'title') ?>
+                                        </a>
+                                    </h5>
+                                    <p>
+                                        <?php echo getVariable($Solution_category_list, 'short_description') ?>
+                                    </p>
+                                </div>
+                            <?php } ?>
+                        <?php } ?>
                         <!-- End Single Item -->
                         <!-- Single Item -->
-                        <div class="item">
-                            <i class="flaticon-backup"></i>
-                            <h5><a href="#">IT Support</a></h5>
-                            <p>
-                                ผู้เชี่ยวชาญฝ่ายสนับสนุนด้านไอทีสำหรับโซลูชันเทคโนโลยีที่ไร้รอยต่อและการแก้ไขปัญหาที่รวดเร็ว
-                            </p>
-                        </div>
+                        <?php foreach ($Solution_category as $key => $Solution_category_list) { ?>
+                            <?php if ($Solution_category_list->title_en == 'IT Support') { ?>
+                                <div class="item">
+                                    <i class="flaticon-backup"></i>
+                                    <a href="<?php echo base_url('solutions/it-support') ?>">
+                                        <h5> <?php echo getVariable($Solution_category_list, 'title') ?>
+                                    </a></h5>
+                                    <p>
+                                        <?php echo getVariable($Solution_category_list, 'short_description') ?>
+                                    </p>
+
+                                </div>
+                                </a>
+                            <?php } ?>
+                        <?php } ?>
+
                         <!-- End Single Item -->
                     </div>
                     <!-- End Item Grid -->
@@ -221,7 +252,7 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <div class="site-heading text-center">
-                    <h4>Popular News</h4>
+                    <h4>Knowledge / News</h4>
                     <h2>Latest From our blog</h2>
                 </div>
             </div>

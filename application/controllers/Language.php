@@ -26,12 +26,10 @@ class Language extends CI_Controller
 
     if ($Language == "th") {
       $this->session->set_userdata("CURRENT_LANGUAGE", "th");
-    } elseif($Language == "en") {
+    } elseif ($Language == "en") {
       $this->session->set_userdata("CURRENT_LANGUAGE", "en");
-    } elseif($Language == "ae") {
-      $this->session->set_userdata("CURRENT_LANGUAGE", "ae");
     }
-    
+
     $previous_page = $_SERVER['HTTP_REFERER'];
     header("Location: $previous_page");
   }

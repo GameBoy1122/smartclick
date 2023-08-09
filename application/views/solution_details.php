@@ -86,6 +86,12 @@
                             <li><a href="<?php echo base_url('solutions/digital-marketing') ?>"><?php echo getWording('index_menu', 'marketing') ?></a></li>
                             <li><a href="<?php echo base_url('solutions/streaming') ?>"><?php echo getWording('index_menu', 'streaming') ?></a></li>
                             <li><a class="active" href="<?php echo base_url('solutions/it-support') ?>"><?php echo getWording('index_menu', 'it_support') ?></a></li>
+                        <?php } else { ?>
+                            <li><a href="<?php echo base_url('solutions/enterprise-application') ?>"><?php echo getWording('index_menu', 'enterprise_application') ?></a></li>
+                            <li><a class="active" href="<?php echo base_url('solutions/cloud-datacenter') ?>"><?php echo getWording('index_menu', 'datacenter') ?></a></li>
+                            <li><a href="<?php echo base_url('solutions/digital-marketing') ?>"><?php echo getWording('index_menu', 'marketing') ?></a></li>
+                            <li><a href="<?php echo base_url('solutions/streaming') ?>"><?php echo getWording('index_menu', 'streaming') ?></a></li>
+                            <li><a href="<?php echo base_url('solutions/it-support') ?>"><?php echo getWording('index_menu', 'it_support') ?></a></li>
                         <?php } ?>
 
 
